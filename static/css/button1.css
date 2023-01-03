@@ -1,0 +1,117 @@
+#button1-container {
+  width: 300px;
+  height: 400px;
+  background-color: black;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+#button1{
+  --button_color: #03e9f4;
+
+  background-color: transparent;
+  border: none;
+  padding: 25px 30px;
+  margin-top: 45%;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: larger;
+  font-weight: bold;
+  letter-spacing: 4px;
+  color: var(--button_color);
+  position: relative;
+  overflow: hidden;
+  transition: 0.6s;
+  cursor: pointer;
+}
+
+#button1 span {
+  display: block;
+  position: absolute;
+  background: var(--button_color);
+}
+
+#button1 span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--button_color));
+  animation: animate-top 1s linear infinite;
+}
+
+#button1 span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  height: 100%;
+  width: 2px;
+  background: linear-gradient(180deg, transparent, var(--button_color));
+  animation: animate-right 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+#button1 span:nth-child(3) {
+  bottom: 0;
+  left: 100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, var(--button_color));
+  animation: animate-bottom 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+#button1 span:nth-child(4) {
+  top: 100%;
+  left: 0;
+  height: 100%;
+  width: 2px;
+  background: linear-gradient(0deg, transparent, var(--button_color));
+  animation: animate-left 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+
+@keyframes animate-top {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 100%;
+  }
+}
+
+@keyframes animate-bottom {
+  0% {
+    left: 100%;
+  }
+  50%, 100% {
+    left: -100%;
+  }
+}
+
+@keyframes animate-right {
+  0% {
+    top: -100%;
+  }
+  50%, 100% {
+    top: 100%;
+  }
+}
+
+@keyframes animate-left {
+  0% {
+    top: 100%;
+  }
+  50%, 100% {
+    top: -100%;
+  }
+}
+
+#button1:hover {
+  color: black;
+  background-color: var(--button_color);
+  box-shadow: 0 0 5px var(--button_color), 0 0 25px var(--button_color), 0 0 50px var(--button_color),
+    0 0 200px var(--button_color);
+  -webkit-box-reflect: below 1px linear-gradient(transparent, black);
+}
